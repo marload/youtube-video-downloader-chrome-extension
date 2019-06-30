@@ -1,0 +1,12 @@
+{
+    "name": "One Click YouTube Download",
+    "description" : "YouTube video download extesion",
+    "version": "1.0",
+    "manifest_version": 2,
+    "browser_action": {
+        "default_popup" : "index.html"
+    },
+    "permissions": [
+        "activeTab", "http://*/*", "https://*/*"
+    ]
+}
