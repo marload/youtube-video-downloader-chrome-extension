@@ -5,7 +5,6 @@ function clickDownloadButton() {
         const url = tabs[0].url;
         const downloadUrl = `${host}/download_chrome_ex?videoUrl=${url}`;
         chrome.tabs.create({url: downloadUrl});
-    
     });
 }
 

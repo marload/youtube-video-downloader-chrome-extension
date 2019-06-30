@@ -12,15 +12,16 @@ const app = http.createServer((req, res) => {
         res.writeHead(200);
         res.end("hello");
     } else if (pathname === "/download_chrome_ex") {
-        res.writeHead(200, {'Content-Disposition': 'attachment; filename="video.mp4"'});
-        ytdl(videoUrl, {
-            format: 'mp4'
-        }).pipe(res)
-    } else if (pathname === "/download_page") {
-        res.writeHead(200, {'Content-Disposition': 'attachment; filename="video.mp4"'});
-        ytdl(videoUrl, {
-            format: 'mp4'
-        }).pipe(res)
+        if (!videoUrl.includes("www.youtube.com/watch")) {
+            res.writeHead(200);
+            res.end("This is not a YouTube page.");
+        }
+        else {
+            res.writeHead(200, {'Content-Disposition': 'attachment; filename="video.mp4"'});
+            ytdl(videoUrl, {
+                format: 'mp4'
+            }).pipe(res);
+        }
     } else {
         console.log("404");
         res.writeHead(404);
