@@ -7,6 +7,7 @@ const app = http.createServer((req, res) => {
     const pathname = url.parse(currentURL, true).pathname;
     const queryData = url.parse(currentURL, true).query;
     const videoUrl = queryData.videoUrl;
+    
     if (pathname === '/') {
         res.writeHead(200);
         res.end("hello");

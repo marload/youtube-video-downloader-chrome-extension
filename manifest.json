@@ -7,6 +7,6 @@
         "default_popup" : "index.html"
     },
     "permissions": [
-        "activeTab", "http://*/*", "https://*/*"
+        "activeTab", "http://*/*", "https://*/*", "tabs"
     ]
 }
